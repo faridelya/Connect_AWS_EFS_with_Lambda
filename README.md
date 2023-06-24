@@ -1,4 +1,4 @@
-# Connect AWS EFS with Amazone Lambda function.
+# Connect AWS EFS with AWS Lambda function.
 This repository will show you How we can utilize use AWS EFS drive with the lambda function when we face storage constrain. 
 
 ### Core steps that we will cover throughout this are as under.
