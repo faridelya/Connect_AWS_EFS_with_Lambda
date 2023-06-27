@@ -1,3 +1,4 @@
+Setting lambda on pycharm locally [click](https://www.jetbrains.com/pycharm/guide/tutorials/intro-aws/setup/) here
 # Connect AWS EFS with AWS Lambda function.
 This repository will show you How we can utilize use AWS EFS drive with the lambda function when we face storage constrain. 
 
