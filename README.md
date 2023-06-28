@@ -25,9 +25,44 @@ create an EFS  drive so you can put your application packages on this drive and 
 
 - Create Network setting in EFS:
 - you should use those security group that you have attach with Ec2 instance which has the following ports open for inbound :
-- 	
-IPv4	HTTP	TCP	  80	   0.0.0.0/0	
-IPv4	HTTPS	TCP	  443	   0.0.0.0/0	
-IPv4	SSH	  TCP	  22	   0.0.0.0/0	
-IPv4	NFS	  TCP	  2049	 0.0.0.0/0
+	
+- IPv4	HTTP	TCP	  80	   0.0.0.0/0	
+- IPv4	HTTPS	TCP	  443	   0.0.0.0/0	
+- IPv4	SSH	  TCP	  22	   0.0.0.0/0	
+- IPv4	NFS	  TCP	  2049	 0.0.0.0/0
 ![ALT text](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/pic/2%20efs%20network.png)
+
+#### Connect with EC2 instance:
+When you are going to connect efs with ec2 instance first connect to your ec2 instance and install aws efs-utils 
+ - To build and install [amazon-efs-utils](https://docs.aws.amazon.com/efs/latest/ug/installing-amazon-efs-utils.html) as a Debian package for Ubuntu and Debian
+ - To clone amazon-efs-utils from GitHub
+ - Connect to the EC2 instance using Secure Shell (SSH), and log in with the appropriate user name. For more information, see Connecting to Your Linux Instance Using SSH in the Amazon EC2 User Guide for Linux Instances.
+ - (Optional) Apply updates before installing the package with the following command:
+```
+sudo apt-get update
+```
+- Install updates as needed.
+
+- Install git and binutils, using the following command. binutils is required for building DEB packages,
+```
+sudo apt-get -y install git binutils
+```
+- Clone amazon-efs-utils from GitHub using the following command.
+```
+git clone https://github.com/aws/efs-utils
+```
+- To build and install the amazon-efs-utils DEB package
+- Navigate to the directory that contains the amazon-efs-utils package.
+```
+cd /path/efs-utils
+```
+- Build amazon-efs-utils using the following command:
+```
+./build-deb.sh
+```
+- Install the package with the following command.
+```
+sudo apt-get -y install ./build/amazon-efs-utils*deb
+```
+
+- Now go to EFS and copy mount command and paste in ec2 instance but make directory for mount pout and you will place that folder name at the end of command
