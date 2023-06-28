@@ -21,7 +21,7 @@ create an EFS  drive so you can put your application packages on this drive and 
 
   ##### Create an access point in efs:
 - you will set these configurations in the access point and also mount the folder name.
-![ALT text] (https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/pic/access-point.png)
+![ALT text](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/pic/access-point.png)
 
   ##### Create Network setting in EFS:
 - you should use those security group that you have attach with Ec2 instance which has the following ports open for inbound :
@@ -85,3 +85,12 @@ sudo chmod -R 777 mountpoint
 - goto lambda - configuration --> VPC
 - you will set the same security group and the region that you have used in EFS network setting  fill option and apply
 ![ALT text](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/pic/1vpc.png)
+
+- got  lambda - configuration File SYstem
+- select the efs and importantly add mount point of efs on lambda function so you can access that mount point in lambda function code.
+- Check lambda function that access efs:
+![ALT text](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/pic/3%20lambda%20code.png)
+
+- check result log:
+![Alt text](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/pic/3%20lambda%20test%20result.png)
+
