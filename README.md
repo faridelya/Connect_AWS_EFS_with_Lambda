@@ -19,20 +19,22 @@ create lambda Function by filling in options and selecting the Python version an
 create an EFS  drive so you can put your application packages on this drive and mount to the ec2 instance for  putting or installing packages in the mount efs path.
 ![ALT text](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/pic/2%20efs%20create.png)
 
-- create an access point in efs:
-- you will set these configuration in access point and also mount folder name.
-  ![ALT text] (https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/pic/access-point.png)
+  ##### Create an access point in efs:
+- you will set these configurations in the access point and also mount the folder name.
+![ALT text] (https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/pic/access-point.png)
 
-- Create Network setting in EFS:
+  ##### Create Network setting in EFS:
 - you should use those security group that you have attach with Ec2 instance which has the following ports open for inbound :
 	
 - IPv4	HTTP	TCP	  80	   0.0.0.0/0	
 - IPv4	HTTPS	TCP	  443	   0.0.0.0/0	
 - IPv4	SSH	  TCP	  22	   0.0.0.0/0	
 - IPv4	NFS	  TCP	  2049	 0.0.0.0/0
+- 
 ![ALT text](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/pic/2%20efs%20network.png)
 
-#### Connect with EC2 instance:
+#### step 3 
+**Connect with EC2 instance:**
 When you are going to connect efs with ec2 instance first connect to your ec2 instance and install aws efs-utils 
  - To build and install [amazon-efs-utils](https://docs.aws.amazon.com/efs/latest/ug/installing-amazon-efs-utils.html) as a Debian package for Ubuntu and Debian
  - To clone amazon-efs-utils from GitHub
@@ -54,7 +56,7 @@ git clone https://github.com/aws/efs-utils
 - To build and install the amazon-efs-utils DEB package
 - Navigate to the directory that contains the amazon-efs-utils package.
 ```
-cd /path/efs-utils
+cd /path/efs-utilswwwwwssw
 ```
 - Build amazon-efs-utils using the following command:
 ```
@@ -65,4 +67,21 @@ cd /path/efs-utils
 sudo apt-get -y install ./build/amazon-efs-utils*deb
 ```
 
-- Now go to EFS and copy mount command and paste in ec2 instance but make directory for mount pout and you will place that folder name at the end of command
+- **Now go to EFS and copy mount command and paste in ec2 instance but make directory for mount pout and you will place that folder name at the end of the command.**
+
+- now move to the mount point directory and create one folder with the same name you added in access point of efs  and inside that folder install any package.
+-  if you found a permission error use these commands but get User and Group Id from the access point of EFS.
+
+```
+sudo chmod USERID:GROUPID /path/to/mountpoint
+```
+```
+sudo chmod -R 777 mountpoint
+```
+- Now you can install anything in mount point of EFS
+
+#### setp 4
+**Mount EFS with Lambda function**
+- goto lambda - configuration --> VPC
+- you will set the same security group and the region that you have used in EFS network setting  fill option and apply
+![ALT text](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/pic/1vpc.png)
