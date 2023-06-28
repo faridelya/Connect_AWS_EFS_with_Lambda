@@ -13,4 +13,10 @@ This repository will show you How we can utilize use AWS EFS drive with the lamb
 create lambda Function by filling in options and selecting the Python version and clicking create button.
 ![ALT text](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/pic/3%20lambda.png)
 
+- Set role in lambda permission ```AWSLambdaBasicExecutionRole``` , ```AWSLambdaVPCAccessExecutionRole``` , ```AmazonElasticFileSystemClientFullAccess```
 
+#### step 2:
+create an EFS  drive so you can put your application packages on this drive and mount to the ec2 instance for  putting or installing packages in the mount efs path.
+![ALT text](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/pic/2%20efs%20create.png)
+
+- create an access point in efs:  
