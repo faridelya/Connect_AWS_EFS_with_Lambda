@@ -11,6 +11,6 @@ This repository will show you How we can utilize use AWS EFS drive with the lamb
 
 #### step 1:
 create lambda Function by filling in options and selecting the Python version and clicking create button.
-![ALT text}(https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/pic/3%20lambda.png)
+![ALT text}([https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/pic/3%20lambda.png](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/pic/3%20lambda.png)https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/pic/3%20lambda.png)
 
 
