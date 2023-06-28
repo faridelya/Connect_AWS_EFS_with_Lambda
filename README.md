@@ -19,4 +19,15 @@ create lambda Function by filling in options and selecting the Python version an
 create an EFS  drive so you can put your application packages on this drive and mount to the ec2 instance for  putting or installing packages in the mount efs path.
 ![ALT text](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/pic/2%20efs%20create.png)
 
-- create an access point in efs:  
+- create an access point in efs:
+- you will set these configuration in access point and also mount folder name.
+  ![ALT text] (https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/pic/access-point.png)
+
+- Create Network setting in EFS:
+- you should use those security group that you have attach with Ec2 instance which has the following ports open for inbound :
+- 	
+IPv4	HTTP	TCP	  80	   0.0.0.0/0	
+IPv4	HTTPS	TCP	  443	   0.0.0.0/0	
+IPv4	SSH	  TCP	  22	   0.0.0.0/0	
+IPv4	NFS	  TCP	  2049	 0.0.0.0/0
+![ALT text](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/pic/2%20efs%20network.png)
