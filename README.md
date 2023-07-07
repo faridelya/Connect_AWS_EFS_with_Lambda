@@ -1,3 +1,4 @@
+before learning lambda must watch this [video](https://www.youtube.com/watch?v=7m_q1ldzw0U) so you willget some idea of lambda function.
 Setting lambda on pycharm locally [click](https://www.jetbrains.com/pycharm/guide/tutorials/intro-aws/setup/) here
 # Connect AWS EFS with AWS Lambda function.
 This repository will show you How we can utilize use AWS EFS drive with the lambda function when we face storage constrain. 
