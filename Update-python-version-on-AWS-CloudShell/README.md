@@ -40,3 +40,12 @@ python3.8 --version
 ```
 pip3.8 install -r requrements.txt -t packages/
 ```
+- if you want to add this folder to s3 for other use like to connect to lambda layer
+```
+zip -r packages.zip  packages
+```
+- copy this zip to s3
+```
+aws s3 cp packages.zip s3://you-bucket-name
+```
+- now check s3 and confirm that this zip folder is copied successfully 
