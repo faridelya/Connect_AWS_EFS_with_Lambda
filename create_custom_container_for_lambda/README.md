@@ -16,22 +16,22 @@
 ### Step 1: Create Iam User
 - Create Iam User and add Permission for that USER Group.
 - Goto IAM User,  click ADD USER
-  ![1](https://github.com/abu-rayyan/toktobot_demo_lambda_without_embeddings/blob/main/Images/IAM/1%20User.png)
+  ![1](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/create_custom_container_for_lambda/images/Iam/1%20User.png)
 - Create one User
-  ![write user name ](https://github.com/abu-rayyan/toktobot_demo_lambda_without_embeddings/blob/main/Images/IAM/2%20User.png)
+  ![write user name ](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/create_custom_container_for_lambda/images/Iam/2%20User.png)
 - ADD this User to group which has good amount of permissions if not, create one for yourself
-  ![](https://github.com/abu-rayyan/toktobot_demo_lambda_without_embeddings/blob/main/Images/IAM/3%20User.png)
-  ![](https://github.com/abu-rayyan/toktobot_demo_lambda_without_embeddings/blob/main/Images/IAM/4%20User.png)
+  ![](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/create_custom_container_for_lambda/images/Iam/3%20User.png)
+  ![](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/create_custom_container_for_lambda/images/Iam/4%20User.png)
 - Click create and User will be added.
-  ![](https://github.com/abu-rayyan/toktobot_demo_lambda_without_embeddings/blob/main/Images/IAM/5%20User%20created.png)
+  ![](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/create_custom_container_for_lambda/images/Iam/5%20User%20created.png)
 - Check User Group Permissions and the new created user is already added to this group.
-  ![](https://github.com/abu-rayyan/toktobot_demo_lambda_without_embeddings/blob/main/Images/IAM/6%20User%20group%20permission.png)
+  ![](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/create_custom_container_for_lambda/images/Iam/6%20User%20group%20permission.png)
 - Goto ```Security``` option and create ```Access key```.
-  ![](https://github.com/abu-rayyan/toktobot_demo_lambda_without_embeddings/blob/main/Images/IAM/7%20User%20Access%20key%201.png)
-  ![](https://github.com/abu-rayyan/toktobot_demo_lambda_without_embeddings/blob/main/Images/IAM/8%20User%20access%20key%20form.png)
-  ![](https://github.com/abu-rayyan/toktobot_demo_lambda_without_embeddings/blob/main/Images/IAM/9%20User%20add%20tag.png)
+  ![](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/create_custom_container_for_lambda/images/Iam/7%20User%20Access%20key%201.png)
+  ![](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/create_custom_container_for_lambda/images/Iam/8%20User%20access%20key%20form.png)
+  ![](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/create_custom_container_for_lambda/images/Iam/9%20User%20add%20tag.png)
 - Access and Security key created successfully copy and save in txt or csv file, it will use in aws configure step.
-  ![](https://github.com/abu-rayyan/toktobot_demo_lambda_without_embeddings/blob/main/Images/IAM/10%20User%20key%20created.png)
+  ![](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/create_custom_container_for_lambda/images/Iam/10%20User%20key%20created.png)
   
   
 
@@ -40,10 +40,10 @@
 - You must have install AWS cli on laptop and Configure AWC CLI Locally , open terminal and run ```aws configure```
 - add Access key and enter
 - add Secret key and enter and other two option remain empty just enter enter. 
-  ![aws configuration](https://github.com/abu-rayyan/toktobot_demo_lambda_without_embeddings/blob/main/Images/aws%20config/1%20AWS%20configure.png)
+  ![aws configuration](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/create_custom_container_for_lambda/images/aws%20config/1%20AWS%20configure.png)
 
 ### Step 3: Create Dockerfile
-- Before Creating Dockerfile and lambda Function INSTALL [Docker](https://docs.docker.com/engine/install/ubuntu/) and also apply [Post](https://docs.docker.com/engine/install/linux-postinstall/) requirement steps.
+- Before Creating Dockerfile and developing lambda Function INSTALL [Docker](https://docs.docker.com/engine/install/ubuntu/) and also apply [Post](https://docs.docker.com/engine/install/linux-postinstall/) requirement steps.
 
 - Create ```Dockerfile``` inside folder where you have placed ```app.py``` module which contain lambda function.
 - **```app.py```**
@@ -141,22 +141,22 @@
     ```
 ## Step 5: Push Docker Image to AWS ECR.
 - first create ECR Repositroy
-  ![](https://github.com/abu-rayyan/toktobot_demo_lambda_without_embeddings/blob/main/Images/ECR/1%20Push%20ECR.png)
+  ![](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/create_custom_container_for_lambda/images/ECR/1%20Push%20ECR.png)
 - Open repo and inside click ``` View Push Commands```.
-  ![](https://github.com/abu-rayyan/toktobot_demo_lambda_without_embeddings/blob/main/Images/ECR/2%20inside%20ecr%20.png)
+  ![](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/create_custom_container_for_lambda/images/ECR/2%20inside%20ecr%20.png)
 - Check Docker Images are added.
-  ![](https://github.com/abu-rayyan/toktobot_demo_lambda_without_embeddings/blob/main/Images/ECR/3%20ecr%20push%20command.png) 
+  ![](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/create_custom_container_for_lambda/images/ECR/3%20ecr%20push%20command.png) 
 
     
     
 ## step 6:  Attach to Lambda Function:
 - Create Lambda function and chose docker container and select ECR repo and select image.
-  ![](https://github.com/abu-rayyan/toktobot_demo_lambda_without_embeddings/blob/main/Images/lambda/1%20create%20lambda%20image.png)
-  ![](https://github.com/abu-rayyan/toktobot_demo_lambda_without_embeddings/blob/main/Images/lambda/2%20created%20lambda.png)
+  ![](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/create_custom_container_for_lambda/images/Lambda/1%20create%20lambda%20image.png)
+  ![](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/create_custom_container_for_lambda/images/Lambda/2%20created%20lambda.png)
 - Click on role for adding new role for lambda
-  ![](https://github.com/abu-rayyan/toktobot_demo_lambda_without_embeddings/blob/main/Images/lambda/3%20lambda%20configure%20for%20permission.png)
+  ![](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/create_custom_container_for_lambda/images/Lambda/3%20lambda%20configure%20for%20permission.png)
 - You must have these permission for lambda if you use s3 bucket.
-  ![](https://github.com/abu-rayyan/toktobot_demo_lambda_without_embeddings/blob/main/Images/lambda/4%20add%20role%20for%20lambda.png)
+  ![](https://github.com/faridelya/Connect_AWS_EFS_with_Lambda/blob/main/create_custom_container_for_lambda/images/Lambda/4%20add%20role%20for%20lambda.png)
 
 - You can attach ```APIGATEWAY``` to this lambda function and also enble cors for apigateway
     
